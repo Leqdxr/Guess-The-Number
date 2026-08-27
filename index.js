@@ -7,8 +7,31 @@ const lastResult = document.querySelector('.lastResult')
 const guesses = document.querySelector('.guesses')
 const button = form.querySelector('button')
 const image = document.querySelector('.images')
+const newGame = document.querySelector('.resetParas')
+
+const p = document.createElement('p')
 
 let remainingGuesses = 10
+
+
+const endGame = () => {
+    p.classList = 'button'
+    p.innerHTML = `<h2 id="restart"> Start Over </h2>`
+    newGame.appendChild(p)
+    p.addEventListener('click',startOver)
+}
+
+const startOver = () => {
+    randomNumber = Math.floor(Math.random() * (100-1+1) + 1)
+    document.querySelector('#guess-field').value = ''
+    remainingGuesses = 10
+    guesses.innerHTML = ''
+    button.removeAttribute('disabled')
+    newGame.removeChild(p)
+    lowOrHigh.innerHTML = ''
+    image.innerHTML = ''
+    lastResult.innerHTML = remainingGuesses
+}
 
 const remImage = () => {
     image.innerHTML = ""
@@ -54,8 +77,9 @@ form.addEventListener('submit', (e) => {
         lowOrHigh.innerHTML = "You got it! Refresh the page to play again"
         lowOrHigh.style.color = "#b8bb26"
         guesses.innerHTML = guesses.innerHTML + userNumber + " "
-        button.disabled = true
+        button.setAttribute('disabled','')
         remImage();
+        endGame();
         return
     }
 
@@ -68,6 +92,7 @@ form.addEventListener('submit', (e) => {
         lowOrHigh.innerHTML = `Game OVER! The number was ${randomNumber}. Refresh the page to try again later`
         lowOrHigh.style.color = "#cc241d"
         subaruImage();
-        button.disabled = true
+        button.setAttribute('disabled','')
+        endGame();
     }
 })
