@@ -19,6 +19,7 @@
     display:block;
     width: 140px;
     margin: 0 auto;
+    padding: 10px;
 }
 
 label[for="guess-field"] {
