@@ -38,3 +38,10 @@ label[for="guess-field"] {
     font-weight: bold;
     border-radius: 15px;
 }
+
+.rem {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    padding: 30px;
+}
