@@ -1,12 +1,12 @@
 let randomNumber = Math.floor(Math.random() * (100-1+1) + 1) // random number from 1 to 100
-console.log(randomNumber);
+
 const attempts = document.querySelector('.attempts')
 const form = document.querySelector('form')
 const lowOrHigh = document.querySelector('#lowOrHigh')
 const lastResult = document.querySelector('.lastResult')
 const guesses = document.querySelector('.guesses')
 const button = form.querySelector('button')
-const image = document.querySelector('.rem')
+const image = document.querySelector('.images')
 
 let remainingGuesses = 10
 
@@ -18,6 +18,16 @@ const remImage = () => {
     rem.alt = "rem"
     rem.src = "./images/rem_thumbsUp.png"
     image.appendChild(rem)
+}
+
+const subaruImage = () => {
+    image.innerHTML = ""
+    const subaru = document.createElement('img')
+    subaru.width = 300
+    subaru.height = 300
+    subaru.alt = "subaru"
+    subaru.src = "./images/subaruHiguruma.jpg"
+    image.appendChild(subaru)
 }
 
 const displayMessage = (userNumber) => {
@@ -57,6 +67,7 @@ form.addEventListener('submit', (e) => {
     if(remainingGuesses <= 0) {
         lowOrHigh.innerHTML = `Game OVER! The number was ${randomNumber}. Refresh the page to try again later`
         lowOrHigh.style.color = "#cc241d"
+        subaruImage();
         button.disabled = true
     }
 })
