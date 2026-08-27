@@ -1,0 +1,39 @@
+.bg-color {
+    background-color: #282828;
+    color: #ebdbb2;
+}
+
+#wrapper h1 {
+    color: #fb4934;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+#wrapper p {
+    text-align: center;
+    font-size: 18px;
+}
+
+#guess-field {
+    display:block;
+    width: 140px;
+    margin: 0 auto;
+}
+
+label[for="guess-field"] {
+    text-align: center;
+    display: block;
+    font-size: 18px
+}
+
+#submit {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #83a598;
+    border-color: #ebdbb2;
+    color: #fbf1c7;
+    font-weight: bold;
+    border-radius: 15px;
+}
