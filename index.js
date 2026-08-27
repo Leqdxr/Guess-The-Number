@@ -74,7 +74,7 @@ form.addEventListener('submit', (e) => {
         return
     }
     if(userNumber === randomNumber) {
-        lowOrHigh.innerHTML = "You got it! Refresh the page to play again"
+        lowOrHigh.innerHTML = "You got it!"
         lowOrHigh.style.color = "#b8bb26"
         guesses.innerHTML = guesses.innerHTML + userNumber + " "
         button.setAttribute('disabled','')
@@ -89,7 +89,7 @@ form.addEventListener('submit', (e) => {
     displayMessage(userNumber)
 
     if(remainingGuesses <= 0) {
-        lowOrHigh.innerHTML = `Game OVER! The number was ${randomNumber}. Refresh the page to try again later`
+        lowOrHigh.innerHTML = `Game OVER! The number was ${randomNumber}.`
         lowOrHigh.style.color = "#cc241d"
         subaruImage();
         button.setAttribute('disabled','')
